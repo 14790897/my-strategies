@@ -3,10 +3,12 @@
 ## command
 
 ```sh
-freqtrade hyperopt --hyperopt-loss SharpeHyperOptLossDaily --spaces buy --strategy E0V1E --config user_data/config.json -e 500 -j 2 --analyze-per-epoch
+freqtrade hyperopt --hyperopt-loss SharpeHyperOptLossDaily --spaces buy --strategy E0V1E --config user_data/config.json -e 1500 -j 2 --analyze-per-epoch
 ```
 
-## result
+## The optimized parameters are stored in E0V1E.json.
+
+## hyperopt process show
 
 ```
                                   ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
