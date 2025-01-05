@@ -17,6 +17,7 @@ class ahr999(IStrategy):
     # Stop Loss and ROI
     stoploss = -2  # 200% stoploss
     # minimal_roi = {"0": 1, "80000": 2, "200000": 3}  # 20% ROI
+    use_exit_signal = False  # 使用这个可以只在最后一天卖出比特币(忽视退出信号)
 
     def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         # 200日定投成本，假设为过去200日的几何平均值
@@ -34,7 +35,7 @@ class ahr999(IStrategy):
     def populate_entry_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         # 查找满足ahr999指标低于0.45的情况
         buy_signals = dataframe["ahr999"] < 0.45
-        dataframe.loc[buy_signals, "buy"] = 1
+        dataframe.loc[buy_signals, ["enter_long", "enter_tag"]] = (1, "ahr<0.45")
 
         # 打印满足条件的时间、价格和ahr999指标值
         # if buy_signals.any():
@@ -53,11 +54,14 @@ class ahr999(IStrategy):
     def populate_exit_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         # 查找满足ahr999指标高于1.2的情况
         sell_signals = dataframe["ahr999"] > 1.2
-        dataframe.loc[sell_signals, "sell"] = 1
+        dataframe.loc[sell_signals, ["exit_long", "exit_tag"]] = (1, "ahr>1.2")
 
         # 设置最后一天为卖出信号
-        last_index = dataframe.index[-1]
-        dataframe.loc[dataframe.index == last_index, "sell"] = 1
+        # last_index = dataframe.index[-1]
+        # dataframe.loc[dataframe.index == last_index, ["exit_long", "exit_tag"]] = (
+        #     1,
+        #     "last-day-sell",
+        # )
         # 打印满足条件的时间、价格和ahr999指标值
         # if sell_signals.any():
         #     for _, row in dataframe[sell_signals].iterrows():
@@ -97,6 +101,4 @@ class ahr999(IStrategy):
 
     def save_signals(self, data: DataFrame, filename: str):
         """保存信号数据到 CSV 文件"""
-        data.to_csv(
-            filename, mode="w", header=not os.path.exists(filename), index=False
-        )
+        data.to_csv(filename, mode="w", header=True, index=False)
