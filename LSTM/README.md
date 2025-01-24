@@ -1,9 +1,10 @@
 ## model architecture is in https://github.com/Netanelshoshan/freqAI-LSTM
 ## backtest command
-
+```sh
 freqtrade backtesting --strategy AlexStrategyFinalV9 --config user_data/config_freqai.json --freqaimodel PyTorchLSTMRegressor --timerange 20210401-20230801
-
+```
 ## result
+```
 Result for strategy AlexStrategyFinalV9
                                                  BACKTESTING REPORT
 ┏━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -132,3 +133,4 @@ Backtested 2021-05-01 20:00:00 -> 2023-08-01 00:00:00 | Max open trades : 10
 ┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━┩
 │ AlexStrategyFinalV9 │  32796 │         0.16 │      101638.596 │      1270.48 │      4:57:00 │ 20075     0  12721  61.2 │ 2394.017 USDT  19.74% │
 └─────────────────────┴────────┴──────────────┴─────────────────┴──────────────┴──────────────┴──────────────────────────┴───────────────────────┘
+```
