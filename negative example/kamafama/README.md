@@ -4,7 +4,7 @@ This strategy performs poorly in bear markets, although it performs well in bull
 
 This strategy uses exit_profit_only, which results in a very high win rate. However, we cannot evaluate the strategy based solely on the win rate; we must consider various other parameters. Additionally, the backtesting period must be sufficiently extensive, taking into account both bull and bear market conditions. If the backtesting performance is poor, the actual performance in live trading will be even worse.
 
-When the exit_profit_only condition is removed, its return in 2024 is only about 160%, which clearly indicates overfitting. This is because with this condition, the return exceeds 5000%.
+When the exit_profit_only condition is removed, its return in 2024 is only about 160%, which clearly indicates overfitting. This is because with this condition, the return exceeds 1000%.
 
 Considering the changes in market conditions, we must ensure that the drawdown is sufficiently small, and the profit from a single trade needs to be around 1%.
 
@@ -326,3 +326,163 @@ Backtested 2024-01-01 00:00:00 -> 2024-12-30 00:00:00 | Max open trades : 1
 ```
 
 ### with the exit_profit_only condition
+
+```
+Result for strategy KamaFama_2
+                                                BACKTESTING REPORT
+┏━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Pair ┃ Trades ┃ Avg Profit % ┃ Tot Profit USDT ┃ Tot Profit % ┃    Avg Duration ┃  Win  Draw  Loss  Win% ┃
+┡━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│   HBAR/USDT │     20 │         1.22 │        1883.242 │       188.32 │         1:24:00 │   20     0     0   100 │
+│   PEPE/USDT │     27 │         1.36 │        1539.688 │       153.97 │         0:51:00 │   27     0     0   100 │
+│   MOVE/USDT │      8 │         1.48 │        1475.776 │       147.58 │         0:26:00 │    8     0     0   100 │
+│     OM/USDT │     39 │         1.49 │        1418.172 │       141.82 │         2:43:00 │   39     0     0   100 │
+│   BONK/USDT │     31 │         1.01 │        1074.813 │       107.48 │         0:43:00 │   31     0     0   100 │
+│   ALGO/USDT │      6 │         1.32 │         719.367 │        71.94 │         1:35:00 │    6     0     0   100 │
+│    SUI/USDT │     11 │         0.85 │         690.074 │        69.01 │         6:48:00 │   11     0     0   100 │
+│    RAY/USDT │     16 │          1.4 │         647.272 │        64.73 │         3:09:00 │   16     0     0   100 │
+│    ENA/USDT │     10 │         1.31 │         605.080 │        60.51 │         2:23:00 │   10     0     0   100 │
+│    XLM/USDT │      4 │         0.99 │         314.970 │         31.5 │         6:21:00 │    4     0     0   100 │
+│   DOGE/USDT │      4 │         1.89 │         314.320 │        31.43 │         0:44:00 │    4     0     0   100 │
+│    ADA/USDT │      2 │         1.85 │         285.377 │        28.54 │         0:25:00 │    2     0     0   100 │
+│    FET/USDT │      9 │         1.01 │         265.106 │        26.51 │         0:33:00 │    9     0     0   100 │
+│    JUP/USDT │      7 │         1.58 │         240.903 │        24.09 │         1:47:00 │    7     0     0   100 │
+│    FIL/USDT │      2 │         3.23 │         218.361 │        21.84 │         0:15:00 │    2     0     0   100 │
+│   AAVE/USDT │      2 │         0.77 │         168.833 │        16.88 │         7:32:00 │    2     0     0   100 │
+│    TAO/USDT │      4 │         0.86 │         132.124 │        13.21 │         1:59:00 │    4     0     0   100 │
+│  THETA/USDT │      4 │          0.9 │         126.121 │        12.61 │         0:11:00 │    4     0     0   100 │
+│    XRP/USDT │      2 │         0.85 │         114.699 │        11.47 │         0:15:00 │    2     0     0   100 │
+│    TIA/USDT │      5 │         0.79 │          99.546 │         9.95 │         0:31:00 │    5     0     0   100 │
+│    TON/USDT │      1 │         2.23 │          98.591 │         9.86 │         1:10:00 │    1     0     0   100 │
+│    LDO/USDT │      2 │          0.5 │          83.107 │         8.31 │         0:45:00 │    2     0     0   100 │
+│    DOT/USDT │      1 │         0.74 │          72.856 │         7.29 │         0:55:00 │    1     0     0   100 │
+│    INJ/USDT │      3 │         0.55 │          58.734 │         5.87 │         0:30:00 │    3     0     0   100 │
+│    VET/USDT │      2 │         0.68 │          50.268 │         5.03 │         5:40:00 │    2     0     0   100 │
+│    STX/USDT │      3 │         0.41 │          49.734 │         4.97 │         1:20:00 │    3     0     0   100 │
+│ RENDER/USDT │      2 │         0.53 │          48.537 │         4.85 │         1:30:00 │    2     0     0   100 │
+│   NEAR/USDT │      3 │         0.82 │          45.617 │         4.56 │         0:32:00 │    3     0     0   100 │
+│    ICP/USDT │      2 │         1.35 │          43.339 │         4.33 │         0:22:00 │    2     0     0   100 │
+│    UNI/USDT │      3 │         0.68 │          39.362 │         3.94 │        11:05:00 │    3     0     0   100 │
+│   ATOM/USDT │      1 │         0.26 │          27.179 │         2.72 │         0:50:00 │    1     0     0   100 │
+│   LINK/USDT │      2 │         0.39 │          26.068 │         2.61 │         0:30:00 │    2     0     0   100 │
+│    APT/USDT │      2 │         0.51 │          18.117 │         1.81 │ 3 days, 6:38:00 │    2     0     0   100 │
+│     OP/USDT │      1 │         1.57 │          16.876 │         1.69 │         0:30:00 │    1     0     0   100 │
+│    IMX/USDT │      1 │         0.25 │          11.470 │         1.15 │         0:05:00 │    1     0     0   100 │
+│    SOL/USDT │      1 │         0.39 │           8.511 │         0.85 │         1:50:00 │    1     0     0   100 │
+│    BCH/USDT │      1 │         0.41 │           4.328 │         0.43 │         0:25:00 │    1     0     0   100 │
+│    BTC/USDT │      0 │          0.0 │           0.000 │          0.0 │            0:00 │    0     0     0     0 │
+│    ETH/USDT │      0 │          0.0 │           0.000 │          0.0 │            0:00 │    0     0     0     0 │
+│    BNB/USDT │      0 │          0.0 │           0.000 │          0.0 │            0:00 │    0     0     0     0 │
+│    TRX/USDT │      0 │          0.0 │           0.000 │          0.0 │            0:00 │    0     0     0     0 │
+│   AVAX/USDT │      0 │          0.0 │           0.000 │          0.0 │            0:00 │    0     0     0     0 │
+│    LTC/USDT │      0 │          0.0 │           0.000 │          0.0 │            0:00 │    0     0     0     0 │
+│    ETC/USDT │      0 │          0.0 │           0.000 │          0.0 │            0:00 │    0     0     0     0 │
+│    POL/USDT │      0 │          0.0 │           0.000 │          0.0 │            0:00 │    0     0     0     0 │
+│    ARB/USDT │      0 │          0.0 │           0.000 │          0.0 │            0:00 │    0     0     0     0 │
+│  BNSOL/USDT │      0 │          0.0 │           0.000 │          0.0 │            0:00 │    0     0     0     0 │
+│   SHIB/USDT │      5 │        -4.35 │        -420.480 │       -42.05 │         1:42:00 │    4     0     1  80.0 │
+│       TOTAL │    249 │         1.09 │       12616.057 │      1261.61 │         2:35:00 │  248     0     1  99.6 │
+└─────────────┴────────┴──────────────┴─────────────────┴──────────────┴─────────────────┴────────────────────────┘
+                                         LEFT OPEN TRADES REPORT
+┏━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃  Pair ┃ Trades ┃ Avg Profit % ┃ Tot Profit USDT ┃ Tot Profit % ┃ Avg Duration ┃  Win  Draw  Loss  Win% ┃
+┡━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ TOTAL │      0 │          0.0 │           0.000 │          0.0 │         0:00 │    0     0     0     0 │
+└───────┴────────┴──────────────┴─────────────────┴──────────────┴──────────────┴────────────────────────┘
+                                                ENTER TAG STATS
+┏━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Enter Tag ┃ Entries ┃ Avg Profit % ┃ Tot Profit USDT ┃ Tot Profit % ┃ Avg Duration ┃  Win  Draw  Loss  Win% ┃
+┡━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│       buy │     249 │         1.09 │       12616.057 │      1261.61 │      2:35:00 │  248     0     1  99.6 │
+│     TOTAL │     249 │         1.09 │       12616.057 │      1261.61 │      2:35:00 │  248     0     1  99.6 │
+└───────────┴─────────┴──────────────┴─────────────────┴──────────────┴──────────────┴────────────────────────┘
+                                               EXIT REASON STATS
+┏━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Exit Reason ┃ Exits ┃ Avg Profit % ┃ Tot Profit USDT ┃ Tot Profit % ┃ Avg Duration ┃  Win  Draw  Loss  Win% ┃
+┡━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│      exit_1 │   248 │         1.19 │       13090.886 │      1309.09 │      2:35:00 │  248     0     0   100 │
+│   stop_loss │     1 │       -25.15 │        -474.829 │       -47.48 │      4:00:00 │    0     0     1     0 │
+│       TOTAL │   249 │         1.09 │       12616.057 │      1261.61 │      2:35:00 │  248     0     1  99.6 │
+└─────────────┴───────┴──────────────┴─────────────────┴──────────────┴──────────────┴────────────────────────┘
+                                                      MIXED TAG STATS
+┏━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Enter Tag ┃ Exit Reason ┃ Trades ┃ Avg Profit % ┃ Tot Profit USDT ┃ Tot Profit % ┃ Avg Duration ┃  Win  Draw  Loss  Win% ┃
+┡━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│       buy │      exit_1 │    248 │         1.19 │       13090.886 │      1309.09 │      2:35:00 │  248     0     0   100 │
+│       buy │   stop_loss │      1 │       -25.15 │        -474.829 │       -47.48 │      4:00:00 │    0     0     1     0 │
+│     TOTAL │             │    249 │         1.09 │       12616.057 │      1261.61 │      2:35:00 │  248     0     1  99.6 │
+└───────────┴─────────────┴────────┴──────────────┴─────────────────┴──────────────┴──────────────┴────────────────────────┘
+                    MONTH BREAKDOWN
+┏━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━┳━━━━━━━┳━━━━━━━━┓
+┃      Month ┃ Tot Profit USDT ┃ Wins ┃ Draws ┃ Losses ┃
+┡━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━╇━━━━━━━╇━━━━━━━━┩
+│ 31/01/2024 │         300.113 │   22 │     0 │      0 │
+│ 29/02/2024 │         277.781 │   18 │     0 │      0 │
+│ 31/03/2024 │         809.593 │   58 │     0 │      1 │
+│ 30/04/2024 │         845.066 │   29 │     0 │      0 │
+│ 31/05/2024 │         137.277 │    4 │     0 │      0 │
+│ 30/06/2024 │         292.378 │    6 │     0 │      0 │
+│ 31/07/2024 │         642.888 │    4 │     0 │      0 │
+│ 31/08/2024 │         498.341 │   12 │     0 │      0 │
+│ 30/09/2024 │               0 │    0 │     0 │      0 │
+│ 31/10/2024 │         544.376 │   10 │     0 │      0 │
+│ 30/11/2024 │        3192.746 │   48 │     0 │      0 │
+│ 31/12/2024 │        5075.497 │   37 │     0 │      0 │
+└────────────┴─────────────────┴──────┴───────┴────────┘
+                   SUMMARY METRICS
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━┓
+┃ Metric                      ┃ Value               ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━┩
+│ Backtesting from            │ 2024-01-01 00:00:00 │
+│ Backtesting to              │ 2024-12-30 00:00:00 │
+│ Trading Mode                │ Spot                │
+│ Max open trades             │ 1                   │
+│                             │                     │
+│ Total/Daily Avg Trades      │ 249 / 0.68          │
+│ Starting balance            │ 1000 USDT           │
+│ Final balance               │ 13616.057 USDT      │
+│ Absolute profit             │ 12616.057 USDT      │
+│ Total profit %              │ 1261.61%            │
+│ CAGR %                      │ 1271.41%            │
+│ Sortino                     │ -100.00             │
+│ Sharpe                      │ 8.50                │
+│ Calmar                      │ 265.68              │
+│ Profit factor               │ 27.57               │
+│ Expectancy (Ratio)          │ 50.67 (0.11)        │
+│ Avg. daily profit %         │ 3.47%               │
+│ Avg. stake amount           │ 4455.875 USDT       │
+│ Total trade volume          │ 1109512.812 USDT    │
+│                             │                     │
+│ Best Pair                   │ OM/USDT 141.82%     │
+│ Worst Pair                  │ SHIB/USDT -42.05%   │
+│ Best trade                  │ OM/USDT 15.83%      │
+│ Worst trade                 │ SHIB/USDT -25.15%   │
+│ Best day                    │ 959.049 USDT        │
+│ Worst day                   │ -223.98 USDT        │
+│ Days win/draw/lose          │ 109 / 252 / 1       │
+│ Avg. Duration Winners       │ 2:35:00             │
+│ Avg. Duration Loser         │ 4:00:00             │
+│ Max Consecutive Wins / Loss │ 194 / 1             │
+│ Rejected Entry signals      │ 1567                │
+│ Entry/Exit Timeouts         │ 0 / 0               │
+│                             │                     │
+│ Min balance                 │ 1014.614 USDT       │
+│ Max balance                 │ 13616.057 USDT      │
+│ Max % of account underwater │ 24.92%              │
+│ Absolute Drawdown (Account) │ 24.92%              │
+│ Absolute Drawdown           │ 474.829 USDT        │
+│ Drawdown high               │ 905.165 USDT        │
+│ Drawdown low                │ 430.336 USDT        │
+│ Drawdown Start              │ 2024-03-05 14:55:00 │
+│ Drawdown End                │ 2024-03-05 19:50:00 │
+│ Market change               │ 253.87%             │
+└─────────────────────────────┴─────────────────────┘
+
+Backtested 2024-01-01 00:00:00 -> 2024-12-30 00:00:00 | Max open trades : 1
+                                                           STRATEGY SUMMARY
+┏━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┓
+┃   Strategy ┃ Trades ┃ Avg Profit % ┃ Tot Profit USDT ┃ Tot Profit % ┃ Avg Duration ┃  Win  Draw  Loss  Win% ┃             Drawdown ┃
+┡━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━┩
+│ KamaFama_2 │    249 │         1.09 │       12616.057 │      1261.61 │      2:35:00 │  248     0     1  99.6 │ 474.829 USDT  24.92% │
+└────────────┴────────┴──────────────┴─────────────────┴──────────────┴──────────────┴────────────────────────┴──────────────────────┘
+```
