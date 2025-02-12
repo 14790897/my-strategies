@@ -152,7 +152,6 @@ class KamaFama_2(IStrategy):
 
         # Williams %R
         dataframe["r_14"] = williams_r(dataframe, period=14)
-        # dataframe["sell_sma_my_strat"] = ta.SMA(dataframe, 180)
 
         return dataframe
 
@@ -187,16 +186,6 @@ class KamaFama_2(IStrategy):
             1,
             "exit_1",
         )
-        # dataframe.loc[
-        #     (
-        #         (dataframe["open"] > (dataframe["sell_sma_my_strat"] * 1.012))
-        #         & (dataframe["open"] < dataframe["close"].shift(4))
-        #         & (dataframe["close"].shift(8) < dataframe["close"].shift(4))
-        #         & (dataframe["close"].shift(12) < dataframe["close"].shift(8))
-        #         & (dataframe["volume"] > 0)
-        #     ),
-        #     ["exit_long", "exit_tag"],
-        # ] = (1, "exit_2")
 
         return dataframe
 
